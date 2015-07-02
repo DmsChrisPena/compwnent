@@ -64,18 +64,5 @@ var app = angular.module("compwnentApp", ['firebase', 'ngRoute']);
           };
 
 
-		$scope.compwnents.$add({ 
-							compName: $scope.compName, 
-							compType: $scope.compType, 
-							compTypeImg: $scope.compTypeImg, 
-							compDemo: $scope.compDemo, 
-							compDocs: $scope.compDocs, 
-							compDesc: $scope.compDesc, 
-							compExamples: $scope.compExamples, 
-							compPic: $scope.compPic, 
-							compPaid: $scope.compPaid, 
-							compPrice: $scope.compPrice
-		});
-
 
 	}]);
