@@ -2,10 +2,23 @@
 	<div class="col-lg-3 animated slideInUp" ng-if="filterTypeBootstrap(comp.compType)" ng-repeat="comp in compwnents | filter:searchCompName">
 		<div class="panel panel-primary">
 		  <div style="background-color: {{comp.compHeadingColor}}" class="panel-heading">
-		    <h3 class="panel-title">{{comp.compName}}</h3>
+		    <h3 class="panel-title text-center">{{comp.compName}}</h3>
 		  </div>
 		  <div class="panel-body">
-		    <img height="100px" ng-src="{{comp.compTypeImg}}">
+		  	<div class="row">
+		  		<img style="height: 75px" class="img-responsive img-rounded center-block" ng-src="{{comp.compPic}}">
+		  	</div>
+		  	<div style="margin-top:10px" class="row text-center">
+		  		<a href="{{comp.compDemo}}" target="_blank" class="btn btn-primary btn-xs">Demo</a>
+		  		<a href="{{comp.compDocs}}" target="_blank" class="btn btn-success btn-xs">Documation</a>
+		  	</div>
+		  	<div style="margin-top:20px" class="row text-center">
+		  		<p>{{comp.compDesc | truncate:140}}</p>
+		  		<p>Price: {{comp.compPrice | currency}}</p>
+		  	</div>
+		  	<div class="row">
+		    	<img style="padding-right: 10px" class="pull-right" height="40px" ng-src="{{comp.compTypeImg}}">
+		  	</div>
 		  </div>
 		</div>
 	</div>
