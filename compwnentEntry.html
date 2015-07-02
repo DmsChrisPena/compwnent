@@ -33,7 +33,7 @@
 				    <div class="form-group">
 				      <label for="select" class="col-lg-2 control-label">Type</label>
 				      <div class="col-lg-10">
-				        <select ng-change="checkTypeImg()" ng-model="compType" class="form-control" id="select">
+				        <select ng-change="checkTypeImg(); checkTypeColor();" ng-model="compType" class="form-control" id="select">
 				          <option value="HTML5">HTML5</option>
 				          <option value="CSS">CSS</option>
 				          <option value="Javascript">Javascript</option>
@@ -41,6 +41,7 @@
 				          <option value="Foundation">Foundation</option>
 				        </select>
 						<img height="200px" ng-src="{{compTypeImg}}">
+						{{compHeadingColor}}
 
 				      </div>
 				    </div>

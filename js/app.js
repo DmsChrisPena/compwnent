@@ -6,6 +6,7 @@ var app = angular.module("compwnentApp", ['firebase', 'ngRoute']);
 		$scope.compName = "";
 		$scope.compType = "";
 		$scope.compTypeImg = "img/html5Png.png";
+    $scope.compHeadingColor = "";
 		$scope.compDemo = "";
 		$scope.compDocs = "";
 		$scope.compDesc = "";
@@ -13,7 +14,6 @@ var app = angular.module("compwnentApp", ['firebase', 'ngRoute']);
 		$scope.compPic = "";
 		$scope.compPaid = false;
 		$scope.compPrice = "";
-
 
 		$scope.checkTypeImg = function(){
 			if($scope.compType == "HTML5") {
@@ -33,6 +33,25 @@ var app = angular.module("compwnentApp", ['firebase', 'ngRoute']);
 			}
 		}
 
+
+    $scope.checkTypeColor = function(){
+      if($scope.compType == "HTML5") {
+        $scope.compHeadingColor = "#E44D26";
+      }
+      if($scope.compType == "CSS") {
+        $scope.compHeadingColor = "#0170BA";
+      }
+      if($scope.compType == "Bootstrap") {
+        $scope.compHeadingColor = "#50244A";
+      }
+      if($scope.compType == "Foundation") {
+        $scope.compHeadingColor = "#29A9DF";
+      }
+      if($scope.compType == "Javascript") {
+        $scope.compHeadingColor = "#F0BB1C";
+      }
+    }
+
           $scope.addMessage = function(e) {
 
 				//Send compwnent
@@ -46,7 +65,8 @@ var app = angular.module("compwnentApp", ['firebase', 'ngRoute']);
               					compExamples: $scope.compExamples, 
               					compPic: $scope.compPic, 
               					compPaid: $scope.compPaid, 
-              					compPrice: $scope.compPrice
+              					compPrice: $scope.compPrice,
+                        compHeadingColor: $scope.compHeadingColor
               });
 
 				//Reset compwnent
@@ -62,6 +82,42 @@ var app = angular.module("compwnentApp", ['firebase', 'ngRoute']);
 				$scope.compPaid = false;
 				$scope.compPrice = "";
           };
+
+          $scope.filterTypeJavascript = function(compType) {
+          	if(compType === "Javascript") {
+          		return true
+          	} else {
+          		return false
+          	}
+          }
+          $scope.filterTypeHtml = function(compType) {
+          	if(compType === "HTML5") {
+          		return true
+          	} else {
+          		return false
+          	}
+          }
+          $scope.filterTypeCss = function(compType) {
+          	if(compType === "CSS") {
+          		return true
+          	} else {
+          		return false
+          	}
+          }
+          $scope.filterTypeBootstrap = function(compType) {
+          	if(compType === "Bootstrap") {
+          		return true
+          	} else {
+          		return false
+          	}
+          }
+          $scope.filterTypeFoundation = function(compType) {
+          	if(compType === "Foundation") {
+          		return true
+          	} else {
+          		return false
+          	}
+          }
 
 
 
